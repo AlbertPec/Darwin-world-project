@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane minHeight="359.0" minWidth="323.0" prefHeight="463.0" prefWidth="323.0" style="-fx-background-color: #E0E0E0; -fx-border-color: #304B08" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.ics.oop.presenter.SimulationMenuPresenter">
+    <BorderPane.margin>
+        <Insets top="10.0" />
+        <Insets bottom="10.0" />
+    </BorderPane.margin>
+    <top>
+        <Label text="Simulation Configuration" textFill="#1b095c" BorderPane.alignment="TOP_CENTER">
+            <font>
+                <Font name="JetBrains Mono Regular" size="18.0" />
+            </font>
+        </Label>
+    </top>
+
+    <center>
+        <HBox alignment="BOTTOM_CENTER" prefHeight="306.0" prefWidth="324.0" spacing="5">
+            <VBox>
+                <VBox spacing="5">
+                    <Label text="Liczba zwierząt">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+                    <Spinner fx:id="animal_nr" amountToStepBy="1" editable="true" initialValue="15" max="100" min="0" prefWidth="70" />
+                </VBox>
+                <VBox alignment="TOP_LEFT" spacing="5">
+                    <Label text="Liczba traw(startowa)">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+                    <Spinner fx:id="grass_nr" amountToStepBy="1" editable="true" initialValue="12" max="100" min="0" prefWidth="70" />
+                </VBox>
+                <VBox alignment="TOP_LEFT" spacing="5">
+                    <Label text="Liczba wzrostu traw" />
+                    <Spinner fx:id="growth_nr" amountToStepBy="1" editable="true" initialValue="10" max="100" min="0" prefWidth="70" />
+                </VBox>
+                <VBox alignment="TOP_LEFT" spacing="5">
+                    <Label text="Energia trawy">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+                    <Spinner fx:id="nutrition" amountToStepBy="1" editable="true" initialValue="10" max="100" min="0" prefWidth="70" />
+                </VBox>
+                <VBox alignment="TOP_LEFT" spacing="5">
+                    <Label text="Energia nasycenia">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+                    <Spinner fx:id="fullEnergy" amountToStepBy="1" editable="true" initialValue="30" max="100" min="0" prefWidth="70" />
+                </VBox>
+                <VBox alignment="TOP_LEFT" spacing="5">
+                    <Label text="Energia rozmnazania">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Label>
+                    <Spinner fx:id="breedEnergy" amountToStepBy="1" editable="true" initialValue="12" max="100" min="0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="70" />
+                </VBox>
+                <VBox alignment="TOP_LEFT" spacing="5">
+                    <Label text="Energia startowa" />
+                    <Spinner fx:id="startEnergy" amountToStepBy="1" editable="true" initialValue="20" max="100" min="1" nodeOrientation="LEFT_TO_RIGHT" prefWidth="70" />
+                </VBox>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Typ mutacji">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <RadioButton fx:id="allRandom" text="AllRandom">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="genom" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="littleCorrection" text="littleCorrection">
+                    <toggleGroup>
+                        <fx:reference source="genom" />
+                    </toggleGroup>
+                </RadioButton>
+
+                <Label text="Zachowanie trawy">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <RadioButton fx:id="forestedEquator" text="forestedEquator(gradient)">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="grassBehaviour" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="normalForestedEquator" text="forestedEquator(normalny)">
+                    <toggleGroup>
+                        <fx:reference source="grassBehaviour" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="creapingJungle" text="creapingJungle">
+                    <toggleGroup>
+                        <fx:reference source="grassBehaviour" />
+                    </toggleGroup>
+                </RadioButton>
+                <Label text="Rozmiary mapy">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <HBox spacing="4">
+                    <Spinner fx:id="width" amountToStepBy="1" editable="true" initialValue="10" max="25" min="1" prefWidth="55.0" />
+                    <Label alignment="BOTTOM_CENTER" text="X" />
+                    <Spinner fx:id="heigth" amountToStepBy="1" editable="true" initialValue="10" max="25" min="1" prefWidth="60" />
+                </HBox>
+                <Label text="Liczba mutacji">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <HBox spacing="4">
+                    <Spinner fx:id="minMut" amountToStepBy="1" editable="true" initialValue="0" max="10" min="0" prefWidth="60" />
+                    <Label text="-" />
+                    <Spinner fx:id="maxMut" amountToStepBy="1" editable="true" initialValue="0" max="10" min="0" prefWidth="60" />
+                </HBox>
+                <Label text="Dlugosc genomu">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <Spinner fx:id="genomSize" amountToStepBy="1" editable="true" initialValue="5" max="10" min="1" prefWidth="70" />
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+            </VBox>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+        </HBox>
+
+
+    </center>
+    <bottom>
+        <VBox alignment="CENTER">
+            <Label fx:id="Ex" text="Nie zaznaczony wszytskich ustawień!!" textFill="red" visible="false" />
+            <Button fx:id="startSim" onAction="#onStartSim" text="Rozpocznij symulacje" BorderPane.alignment="BOTTOM_CENTER">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+
+    </bottom>
+   <padding>
+      <Insets bottom="10.0" top="10.0" />
+   </padding>
+
+
+</BorderPane>

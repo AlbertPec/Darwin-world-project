@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane minHeight="650.0" minWidth="850.0" style="-fx-background-color: rgb(180,180,180)" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.ics.oop.presenter.SimulationPresenter">
+    <BorderPane.margin>
+        <Insets top="10.0" />
+        <Insets bottom="10.0" />
+    </BorderPane.margin>
+    <top>
+        <HBox alignment="TOP_CENTER">
+            <Label fx:id="mapId" />
+            <Label text="Dzień symulacji : " />
+            <Label fx:id="dayL" text="0" />
+        </HBox>
+    </top>
+    <bottom>
+        <HBox spacing="20.0">
+            <VBox>
+                <Button fx:id="runButton" onAction="#runSim" text="run" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font></Button>
+                <Button fx:id="startStopButton" onAction="#startStop" text="stop" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font></Button>
+            </VBox>
+            <Text text="Statystyki :"/>
+            <VBox>
+                <Text text="Liczba zwierzat:"/>
+                <Label fx:id="statAnNrLabel" text="0"/>
+            </VBox>
+            <VBox>
+                <Text text="Liczba roslin:"/>
+                <Label fx:id="statGrNrLabel" text="0"/>
+            </VBox>
+            <VBox>
+                <Text text="Liczba wolnych pol:"/>
+                <Label fx:id="statFrNrLabel" text="0"/>
+            </VBox>
+            <VBox>
+                <Text text="Srednia dlugosc zycia:"/>
+                <Label fx:id="statAvLsLabel" text="0"/>
+            </VBox>
+            <VBox>
+                <Text text="Srednia liczba dzieci:"/>
+                <Label fx:id="statAvCiLabel" text="0"/>
+            </VBox>
+            <VBox>
+                <Text text="Srednia energia:"/>
+                <Label fx:id="statAvEnLabel" text="0"/>
+            </VBox>
+        </HBox>
+
+
+    </bottom>
+    <center>
+        <GridPane fx:id="mapGrid" alignment="CENTER" gridLinesVisible="true" style="-fx-background-color: rgb(180,180,180)" />
+    </center>
+    <right>
+        <VBox alignment="TOP_RIGHT" BorderPane.alignment="CENTER">
+            <Text text="Sledzony zwierzak:" textOrigin="CENTER">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <ComboBox fx:id="animalsComboBox" visible="false" />
+            <Text text="Genom zwierzaka :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="gnmLabel" text="-" />
+            <Text text="Obecny gen :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="cgnLabel" text="-" />
+            <Text text="Energia zwierzaka :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="eneLabel" text="-" />
+            <Text text="Liczba zjedzonych traw :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="eatLabel" text="-" />
+            <Text text="Liczba dzieci zwierzaka :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="chiLabel" text="-" />
+            <Text text="Liczba potomkow :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="offLabel" text="-" />
+            <Text text="Wiek :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="ageLabel" text="-" />
+            <Text text="Data zgonu :">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Text>
+            <Label fx:id="dodLabel" text="-" />
+        </VBox>
+    </right>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+</BorderPane>
